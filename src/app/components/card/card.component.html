@@ -1,0 +1,22 @@
+<a *ngIf="showSubreddit"
+    routerLink="/{{ post.subreddit }}" class="subreddit-link">
+        {{ post.subreddit }}
+</a>
+<span class="post-time">
+    {{ moment.unix(post.created_utc).fromNow() }}
+</span>
+<div class="{{ post.post_hint !== 'image' && post.thumbnail && post.thumbnail !== 'default' ?
+    'thumbnail-post' : '' }}">
+    <a routerLink="/{{ post.subreddit }}/{{ post.id }}">
+        <h2 class="post-title">{{ post.title }}</h2>
+    </a>
+    <app-post-content *ngIf="!post.is_self" [post]="post"></app-post-content>
+</div>
+<div class="post-panel">
+    <span class="score">{{ post.score }}</span>
+    <a class="comments-link"
+        routerLink="/{{ post.subreddit }}/{{ post.id }}#comments">
+            <img src="../../../assets/comments-icon.png" alt="comments icon" />
+            <span>{{ post.num_comments }} {{ post.num_comments === 1 ? 'comment' : 'comments' }}</span>
+    </a>
+</div>

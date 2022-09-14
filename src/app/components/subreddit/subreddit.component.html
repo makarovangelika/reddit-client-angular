@@ -1,0 +1,6 @@
+<h1 class="subreddit-title">{{ showSubreddit ? 'Popular posts' : subreddit }}</h1>
+<span *ngIf="loading" class="loading">Loading...</span>
+<div *ngIf="subredditPostsService.subredditPosts">
+    <app-card *ngFor="let post of subredditPostsService.subredditPosts"
+        [post]="post" [showSubreddit]="showSubreddit"></app-card>
+</div>

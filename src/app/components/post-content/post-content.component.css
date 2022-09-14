@@ -1,0 +1,14 @@
+.post-image {
+    display: flex;
+    justify-content: center;
+}
+.post-image img {
+    width: 100%;
+}
+.post-link {
+    color: #0079D3;
+    font-size: 0.85rem;
+}
+.post-link:hover {
+    text-decoration: underline;
+}
