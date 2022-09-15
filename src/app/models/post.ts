@@ -12,10 +12,8 @@ export interface Post {
 }
 
 export interface SubredditPostsResponse {
-    kind: string,
     data: {
         children: {
-            kind: string,
             data: Post
         }[]
     }
