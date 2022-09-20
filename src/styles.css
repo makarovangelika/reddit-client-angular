@@ -42,12 +42,29 @@ body {
     color: #5c676e;
 }
   
-  @media only screen and (min-width: 640px) {
-    main {
-      margin-top: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
+@media only screen and (min-width: 640px) {
+  main {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
+}
+app-card {
+  display: block;
+  background-color: rgb(241, 241, 241);
+  margin-bottom: 10px;
+  padding: 1px 8px;
+  border: 1px solid transparent;
+}
+app-card:hover {
+  border-color: #5c676e;
+}
+@media only screen and (min-width: 640px) {
+  app-card {
+      border-radius: 5px;
+      padding: 5px 15px 2px;
+  }
+}
+
   

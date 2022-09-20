@@ -10,11 +10,3 @@ export interface Post {
     url: string,
     is_self: boolean
 }
-
-export interface SubredditPostsResponse {
-    data: {
-        children: {
-            data: Post
-        }[]
-    }
-}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SubredditPostsService } from '../../services/subreddit-posts.service';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from '../../models/post';
 
 @Component({
   selector: 'app-subreddit',
@@ -11,8 +12,9 @@ export class SubredditComponent implements OnInit {
   loading = false;
   subreddit: string;
   showSubreddit: boolean;
+  subredditPosts: Post[]
 
-  constructor(public subredditPostsService: SubredditPostsService,
+  constructor(private subredditPostsService: SubredditPostsService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -21,8 +23,11 @@ export class SubredditComponent implements OnInit {
       this.showSubreddit = this.subreddit === 'popular';
   })
     this.loading = true;
-    this.subredditPostsService.getAll(this.subreddit)
-      .subscribe(() => this.loading = false);
+    this.subredditPostsService.getPosts(this.subreddit)
+      .subscribe(posts => {
+        this.loading = false;
+        this.subredditPosts = posts;
+      });
   }
 
 }

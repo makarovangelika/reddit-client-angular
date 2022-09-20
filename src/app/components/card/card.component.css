@@ -1,20 +1,6 @@
-:host {
-    display: block;
-    background-color: rgb(241, 241, 241);
-    margin-bottom: 10px;
-    padding: 1px 8px;
-    border: 1px solid transparent;
-}
 .post-title {
     font-size: 1.3rem;
     margin: 10px 0;
-}
-:host:hover {
-    border-color: #5c676e;
-}
-span {
-    font-size: .85rem;
-    color: #5c676e;
 }
 .post-panel {
     font-weight: 700;
@@ -56,11 +42,4 @@ span {
 }
 .thumbnail-post img {
     margin-left: 20px;
-}
-
-@media only screen and (min-width: 640px) {
-    :host {
-        border-radius: 5px;
-        padding: 5px 15px 2px;
-    }
 }

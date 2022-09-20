@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../models/post';
-import { Observable, tap } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { baseURL } from './baseURL';
-import { SubredditPostsResponse } from '../models/post';
+
+interface SubredditPostsResponse {
+  data: {
+      children: {
+          data: Post
+      }[]
+  }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +19,12 @@ export class SubredditPostsService {
 
   constructor(private http: HttpClient) { }
 
-  subredditPosts: Post[] = [];
-
-  getAll(subreddit: string): Observable<SubredditPostsResponse> {
-    return this.http.get<SubredditPostsResponse>(`${baseURL}/r/${subreddit}.json`)
+  getPosts(subreddit: string): Observable<Post[]> {
+      return this.http.get<SubredditPostsResponse>(`${baseURL}/r/${subreddit}.json`)
       .pipe(
-        tap(posts => {
-          this.subredditPosts = posts.data.children.map(post => post.data)
-        })
-      )
+        map(posts => {
+          return posts.data.children.map(post => post.data);
+        }))
   }
 
 }

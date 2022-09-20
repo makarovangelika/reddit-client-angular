@@ -8,6 +8,9 @@ import { PostComponent } from './components/post/post.component';
 import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostContentComponent } from './components/post-content/post-content.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { FullCardComponent } from './components/full-card/full-card.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { PostContentComponent } from './components/post-content/post-content.com
     SubredditComponent,
     PostComponent,
     CardComponent,
-    PostContentComponent
+    PostContentComponent,
+    LoadingComponent,
+    FullCardComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

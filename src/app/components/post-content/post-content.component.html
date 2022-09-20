@@ -1,12 +1,12 @@
-<div *ngIf="post.post_hint === 'image'" class='post-image'>
+<div *ngIf="post.post_hint === 'image'" class="post-image {{ additionalClass }}">
     <img [src]="post.url" alt='media preview' />
 </div>
 
 <div *ngIf="post.post_hint !== 'image'">
-    <a *ngIf="post.thumbnail && post.thumbnail !== 'default'" [href]="post.url" target='_blank' rel='noreferrer' >
+    <a *ngIf="post.thumbnail && post.thumbnail !== 'default'" [href]="post.url" target="_blank" rel="noreferrer" >
         <img [src]="post.thumbnail" alt='media preview' />
     </a>
-    <a *ngIf="!post.thumbnail || post.thumbnail === 'default'" class='post-link'
-        [href]="post.url" target='_blank' rel='noreferrer' >{{ post.url }}</a>
+    <a *ngIf="!post.thumbnail || post.thumbnail === 'default'" class="post-link"
+        [href]="post.url" target="_blank" rel="noreferrer" >{{ post.url }}</a>
 </div>
 

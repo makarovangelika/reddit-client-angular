@@ -5,6 +5,23 @@ import { Comment, FullPost } from '../models/fullPost';
 import { Observable, map } from 'rxjs';
 import { baseURL } from './baseURL';
 
+interface PostResponse {
+  0: {
+    data: {
+      children: {
+        data: Post
+      }[]
+    }
+  },
+  1: {
+    data: {
+      children: {
+        data: Comment
+      }[]
+    }
+  }
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,14 +30,14 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPost(postId: string): Observable<FullPost> {
-    return this.http.get<any>(`${baseURL}/comments/${postId}.json`)
+    return this.http.get<PostResponse>(`${baseURL}/comments/${postId}.json`)
       .pipe(
         map(post => {
-          return <FullPost>{
-            post: post[0].data.children[0].data as Post,
+          return {
+            post: post[0].data.children[0].data,
             comments: post[1].data.children.filter((comment: any) => {
               return comment.kind !== 'more';
-            }).map((comment: any) => comment.data) as Comment[]
+            }).map(comment => comment.data)
           }
         })
       )

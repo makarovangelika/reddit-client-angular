@@ -1,1 +1,7 @@
-
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="post">
+    <app-full-card [post]="post"></app-full-card>
+    <div class='comments-list'>
+        <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+    </div>
+</div>
