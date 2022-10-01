@@ -2,6 +2,6 @@
 <span>{{ moment.unix(comment.created).fromNow() }}</span>
 <p>{{ comment.body }}</p>
 <ng-container *ngIf="comment.replies">
-    <app-comment class="child" *ngFor="let reply of replies" [comment]="reply.data">
+    <app-comment *ngFor="let reply of replies" [comment]="reply.data">
     </app-comment>
 </ng-container>

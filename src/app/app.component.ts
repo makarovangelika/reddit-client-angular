@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-reddit-client';
+  openedMenu = false;
+
+  constructor() {
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.openedMenu = !this.openedMenu;
+  }
 }

@@ -10,6 +10,7 @@ import { Post } from '../../models/post';
 })
 export class SubredditComponent implements OnInit {
   loading = false;
+  error =  '';
   subreddit: string;
   showSubreddit: boolean;
   subredditPosts: Post[]
@@ -24,10 +25,14 @@ export class SubredditComponent implements OnInit {
   })
     this.loading = true;
     this.subredditPostsService.getPosts(this.subreddit)
-      .subscribe(posts => {
-        this.loading = false;
-        this.subredditPosts = posts;
-      });
+      .subscribe({
+        next: posts => {
+          this.loading = false;
+          this.subredditPosts = posts;
+        },
+        error: err => this.error = err
+      }
+      );
   }
 
 }

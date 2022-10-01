@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../models/post';
 import { Comment, FullPost } from '../models/fullPost';
-import { Observable, map } from 'rxjs';
+import { Observable, map, catchError, throwError } from 'rxjs';
 import { baseURL } from './baseURL';
 
 interface PostResponse {
@@ -39,6 +39,9 @@ export class PostService {
               return comment.kind !== 'more';
             }).map(comment => comment.data)
           }
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return throwError(() => new Error(err.message));
         })
       )
   }

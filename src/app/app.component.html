@@ -1,3 +1,8 @@
+<app-header></app-header>
 <main>
     <router-outlet></router-outlet>
+    <app-subreddit-menu
+        class="{{ openedMenu ? 'opened' : '' }}"
+        [toggleMenu]="toggleMenu">
+    </app-subreddit-menu>
 </main>

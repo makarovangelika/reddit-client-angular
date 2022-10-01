@@ -1,0 +1,16 @@
+<div class="header-bar">
+    <a routerLink="/">
+        <img class="logo" src="../../../assets/reddit-logo.svg" alt="reddit logo" />
+    </a>
+    <div class="search-bar">
+        <label class="search-label" for="search-input">
+            <img src="../../../assets//search-icon.svg" alt="search icon" />
+        </label>
+        <input
+            id="search-input"
+            type="search"
+            placeholder="Search Reddit"
+            [(ngModel)]="term"
+            (ngModelChange)="goToResults()" />
+    </div>
+</div>

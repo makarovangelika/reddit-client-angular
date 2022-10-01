@@ -15,6 +15,7 @@ export class PostComponent implements OnInit {
   comments: Comment[];
   postId: string;
   loading = false;
+  error = '';
 
   constructor(
     private postService: PostService,
@@ -26,10 +27,13 @@ export class PostComponent implements OnInit {
     });
     this.loading = true;
     this.postService.getPost(this.postId)
-      .subscribe(fullPost => {
-        this.loading = false;
-        this.post = fullPost.post;
-        this.comments = fullPost.comments;
+      .subscribe({
+        next: fullPost => {
+          this.loading = false;
+          this.post = fullPost.post;
+          this.comments = fullPost.comments;
+        },
+        error: err => this.error = err
       });
   }
 

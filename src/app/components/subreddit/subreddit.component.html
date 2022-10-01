@@ -1,5 +1,6 @@
+<app-error *ngIf="error" [error]="error"></app-error>
 <h1 class="subreddit-title">{{ showSubreddit ? 'Popular posts' : subreddit }}</h1>
-<app-loading *ngIf="loading"></app-loading>
+<app-loading *ngIf="loading && !error"></app-loading>
 <div *ngIf="subredditPosts">
     <app-card *ngFor="let post of subredditPosts"
         [post]="post" [showSubreddit]="showSubreddit"></app-card>

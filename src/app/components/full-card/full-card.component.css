@@ -1,5 +1,6 @@
 :host {
     padding: 1px 8px;
+    display: block
 }
 .post-content a {
     color: rgb(0, 102, 204);

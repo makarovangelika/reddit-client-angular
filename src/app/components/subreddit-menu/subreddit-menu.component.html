@@ -1,0 +1,26 @@
+<div (click)="toggleMenu()" class="toggler">
+    <div class="open">
+        <img src="../../../assets/burger-menu.svg" alt="hamburger menu icon" />
+    </div>
+    <div class="close">
+        <img src="../../../assets/close-icon.svg" alt="icon to close menu" />
+    </div>
+</div>
+<nav class="subreddit-links">
+    <app-error *ngIf="error" [error]="error"></app-error>
+    <app-loading *ngIf="loading && !error"></app-loading>
+    <a
+        *ngFor="let subreddit of subreddits"
+        routerLink="/{{ subreddit.display_name }}"
+        routerLinkActive="active"
+        (click)="toggleMenu()">
+            <img
+            *ngIf="subreddit.icon_img"
+            class="subreddit-icon"
+            [src]="subreddit.icon_img"
+            alt="icon of the subreddit" />
+
+            <div *ngIf="!subreddit.icon_img" class="subreddit-icon"></div>
+            <span>{{ subreddit.display_name }}</span>
+    </a>
+</nav>

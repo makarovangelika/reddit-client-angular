@@ -10,3 +10,10 @@ export interface Post {
     url: string,
     is_self: boolean
 }
+export interface PostsResponse {
+    data: {
+        children: {
+            data: Post
+        }[]
+    }
+  }

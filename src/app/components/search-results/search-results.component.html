@@ -1,0 +1,8 @@
+<app-error *ngIf="searchResultsService.error" [error]="searchResultsService.error"></app-error>
+<app-loading *ngIf="searchResultsService.loading && !searchResultsService.error"></app-loading>
+<div *ngIf="!searchResultsService.loading">
+    <app-card
+        *ngFor="let result of searchResultsService.results"
+        [post]="result"
+        [showSubreddit]="true"></app-card>
+</div>
