@@ -10,13 +10,12 @@ const routes: Routes = [
   { path: ':subreddit', component: SubredditComponent},
   { path: ':subreddit/:postId', component: PostComponent}
 ];
-/*const routerOptions: ExtraOptions = {
-  anchorScrolling: 'enabled',
-  scrollPositionRestoration: 'enabled'
-}*/
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: "enabled"
+}
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
