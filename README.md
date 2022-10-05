@@ -3,8 +3,9 @@ This Angular web application uses the Reddit API to allow users to view and sear
 This project was built to practice working with **Angular** and **TypeScript**.\
 This project was also built using **React** and **Redux** [here](https://github.com/makarovangelika/reddit-client).
 ## Usage
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.\
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.\
+This project was deployed using Netlify [here](https://reddit-client-angular.netlify.app/).
 ## Features
 The starting page shows the popular posts of Reddit. There are also the search bar at the top and the menu with popular subreddits on the right.
 
