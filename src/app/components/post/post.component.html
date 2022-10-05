@@ -1,6 +1,6 @@
 <app-error *ngIf="error" [error]="error"></app-error>
 <app-loading *ngIf="loading && !error"></app-loading>
-<div *ngIf="post">
+<div *ngIf="post" class="post">
     <app-full-card [post]="post"></app-full-card>
     <div class='comments-list'>
         <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>

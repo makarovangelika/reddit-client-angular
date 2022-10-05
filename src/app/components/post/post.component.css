@@ -1,7 +1,9 @@
 :host {
-    background-color: rgb(241, 241, 241);
     padding-bottom: 15px;
     display: block
+}
+.post { 
+    background-color: rgb(241, 241, 241);
 }
 .comments-list {
     padding: 0 8px;
@@ -14,6 +16,8 @@
     }
     :host {
         width: 70%;
+    }
+    .post {
         border-radius: 5px;
     }
 }
