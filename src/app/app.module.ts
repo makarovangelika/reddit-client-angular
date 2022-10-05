@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SubredditMenuComponent } from './components/subreddit-menu/subreddit-menu.component';
 import { ErrorComponent } from './components/error/error.component';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ErrorComponent } from './components/error/error.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   providers: [],
   bootstrap: [AppComponent]

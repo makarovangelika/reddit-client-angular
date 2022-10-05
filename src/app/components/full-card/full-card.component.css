@@ -2,13 +2,6 @@
     padding: 1px 8px;
     display: block
 }
-.post-content a {
-    color: rgb(0, 102, 204);
-    text-decoration: underline;
-}
-.post-content a:hover {
-    text-decoration: none;
-}
 @media only screen and (min-width: 640px) {
     :host {
         border-radius: 5px;

@@ -9,6 +9,7 @@
         'thumbnail-post' : '' }}">
 
     <h1 class='post-title'>{{ post.title }}</h1>
+    <markdown *ngIf="post.is_self" [data]="post.selftext"></markdown>
     <app-post-content *ngIf="!post.is_self"
         [post]="post"
         [additionalClass]="class">

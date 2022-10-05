@@ -16,10 +16,3 @@
 p {
     margin-top: 5px;
 }
-:host a {
-    color: rgb(0, 102, 204);
-    text-decoration: underline;
-}
-:host a:hover {
-    text-decoration: none;
-}

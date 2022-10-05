@@ -66,5 +66,12 @@ app-card:hover {
       padding: 5px 15px 2px;
   }
 }
+app-comment a, .post-content a {
+  color: rgb(0, 102, 204);
+  text-decoration: underline;
+}
+app-comment a:hover, .post-content a:hover {
+  text-decoration: none;
+}
 
   

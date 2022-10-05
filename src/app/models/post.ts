@@ -8,7 +8,8 @@ export interface Post {
     score: number,
     num_comments: number,
     url: string,
-    is_self: boolean
+    is_self: boolean,
+    selftext: string
 }
 export interface PostsResponse {
     data: {

@@ -1,6 +1,6 @@
 <p class="comment-author">{{ comment.author }}</p>
 <span>{{ moment.unix(comment.created).fromNow() }}</span>
-<p>{{ comment.body }}</p>
+<markdown [data]="comment.body"></markdown>
 <ng-container *ngIf="comment.replies">
     <app-comment *ngFor="let reply of replies" [comment]="reply.data">
     </app-comment>
