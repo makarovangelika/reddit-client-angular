@@ -7,7 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.\
 This project was deployed using Netlify [here](https://reddit-client-angular.netlify.app/).
 ## Features
-The starting page shows the popular posts of Reddit. There are also the search bar at the top and the menu with popular subreddits on the right.
+The starting page shows the popular posts of Reddit. There are also the search bar at the top and the menu with popular subreddits on the right.\
+The search results are updating instantly as the users type in the search bar.
 
 ![The starting page of the project](src/assets/reddit-screenshot.png)
 
